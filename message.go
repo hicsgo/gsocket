@@ -7,7 +7,7 @@ import (
 type (
 	Message struct {
 		Payload   *MessagePayload `form:"payload" json:"payload"`     //消息内容
-		Type      string          `form:"type" json:"type"`           //类型码
+		Type      int64           `form:"type" json:"type"`           //类型码
 		Timestamp int64           `form:"timestamp" json:"timestamp"` //unix时间戳，单位秒
 	}
 
@@ -15,7 +15,7 @@ type (
 	MessagePayload struct {
 		UserId   string `form:"user_id" json:"user_id"`     //用户id
 		TargetId string `form:"target_id" json:"target_id"` //目标id
-		Code     string `form:"code" json:"code"`           //自定义编码
+		Msg      string `form:"msg" json:"msg"`             //传递的信息
 		Extend   string `form:"extend" json:"extend"`       //扩展信息
 	}
 )
