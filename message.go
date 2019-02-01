@@ -7,7 +7,7 @@ import (
 type (
 	Message struct {
 		Payload   *MessagePayload `form:"payload" json:"payload"`     //消息内容
-		Type      int64           `form:"type" json:"type"`           //类型码
+		Type      string          `form:"type" json:"type"`           //类型码
 		Timestamp int64           `form:"timestamp" json:"timestamp"` //unix时间戳，单位秒
 	}
 
