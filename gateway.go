@@ -20,7 +20,7 @@ import (
  *  author:golang123@outlook.com
  * ================================================================================ */
 
-var local_gateway_addr = "10.1.10.70:8044" //需要能被处理器连接到(最好都处在一个内网环境,使用内网ip)
+var local_gateway_addr = "10.1.10.70:8099" //需要能被处理器连接到(最好都处在一个内网环境,使用内网ip)
 
 var upgrader = websocket.Upgrader{} // use default options
 
@@ -304,9 +304,40 @@ func (gateway *gateway) consumerMsg() {
 					fmt.Println("gateway worker_conn_to_gateway:", connId, remoteAddr)
 
 				}
+			case CLIENT_CONN_TO_GATEWAY:
+				{
+					////connid
+					//connId := result.connId
+					////remoteAddr
+					//remoteAddr := result.conn.RemoteAddr().String()
+					////conn
+					//conn := result.conn
+					//terninalName:=result.msg.Type
+					//
+					////处理映射
+					//if _, ok := gateway.connMapping.Load(connId); !ok {
+					//	gateway.connMapping.Store(connId, ConnMap{
+					//		MapKey: remoteAddr,
+					//		Tag:    CLIENT_CONN_TO_GATEWAY,
+					//	})
+					//}
+					////客户端连接到网关
+					//if _, ok := gateway.clientConns.Load(remoteAddr); !ok {
+					//	gateway.clientConns.Store(remoteAddr, ConnFlag{
+					//		ConnId:connId,
+					//		TerminalName:TERMINAL_NAME_SERVER
+					//	})
+					//}
+				}
+			case HEART_BEAT:
+				{
+					log.Println("heart_beat")
+				}
 			default:
 				fmt.Println("gateway unkown type code")
 			}
+			msgJson, err := json.Marshal(result.msg)
+			fmt.Println(string(msgJson), err)
 			fmt.Println("------------------------------gateway worker_conn_to_gateway   end   -------------------------------------")
 			fmt.Println()
 		}

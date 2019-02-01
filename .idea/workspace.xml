@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="881834ac-dc64-44fc-a135-f474aebe7acf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/test/socket_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/const.go" beforeDir="false" afterPath="$PROJECT_DIR$/const.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/message.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/register.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/worker.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +13,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="gateway.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gateway.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+              <folding>
+                <element signature="n#!!block;n#server#0" />
+                <element signature="e#3195#3247#0" />
+                <element signature="e#3308#3365#0" />
+                <element signature="e#3395#3763#0" />
+                <element signature="e#3480#3626#0" />
+                <element signature="e#3544#3612#0" />
+                <element signature="e#3696#3760#0" />
+                <element signature="n#!!block;n#dialRegister#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="socket_test.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/socket_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="210">
+              <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
               <folding>
                 <element signature="e#14#46#0" expanded="true" />
               </folding>
@@ -32,11 +44,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gateway.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gateway.go">
+      <file leaf-file-name="worker.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/worker.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+            <state relative-caret-position="226">
+              <caret line="280" column="54" lean-forward="true" selection-start-line="280" selection-start-column="54" selection-end-line="280" selection-end-column="54" />
+              <folding>
+                <element signature="n#!!block;n#WorkerRun#0" />
+                <element signature="n#!!block;n#workerHandler#0" />
+                <element signature="n#!!block;n#TestBus#0" />
+                <element signature="n#!!block;n#dialGateway#0" />
+                <element signature="n#!!block;n#offlineConn#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="message.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/message.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+              <folding>
+                <element signature="e#17#53#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,7 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isconnetecd here</find>
       <find>xxxxxxxxxxxxxxxxxxx</find>
       <find>CONN_CLOSE</find>
       <find>here websocket</find>
@@ -82,6 +112,7 @@
       <find>register_broadcast_gateway_addr</find>
       <find>connecting</find>
       <find>*******************************************</find>
+      <find>gateway unkown type code</find>
     </findStrings>
     <replaceStrings>
       <replace>uuidStr</replace>
@@ -110,9 +141,9 @@
         <option value="$PROJECT_DIR$/message.go" />
         <option value="$PROJECT_DIR$/test/socket_test.go" />
         <option value="$PROJECT_DIR$/model.go" />
-        <option value="$PROJECT_DIR$/const.go" />
         <option value="$PROJECT_DIR$/register.go" />
         <option value="$PROJECT_DIR$/worker.go" />
+        <option value="$PROJECT_DIR$/const.go" />
         <option value="$PROJECT_DIR$/gateway.go" />
       </list>
     </option>
@@ -183,7 +214,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestGateway in gsocket/test">
+  <component name="RunManager" selected="Go Test.TestWorker in gsocket/test">
     <configuration name="TestGateway in gsocket/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="gsocket" />
       <working_directory value="$PROJECT_DIR$/test" />
@@ -248,8 +279,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestGateway in gsocket/test" />
         <item itemvalue="Go Test.TestWorker in gsocket/test" />
+        <item itemvalue="Go Test.TestGateway in gsocket/test" />
         <item itemvalue="Go Test.TestRegister in gsocket/test" />
         <item itemvalue="Go Test.TestServer in gsocket/test" />
         <item itemvalue="Go Test.TestSyncMap in gsocket/test" />
@@ -257,35 +288,35 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRegister_in_gsocket_test - 2019.02.01 at 15h 59m 29s.xml">
-      <configuration name="TestRegister in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestGateway_in_gsocket_test - 2019.02.01 at 16h 22m 51s.xml">
-      <configuration name="TestGateway in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestWorker_in_gsocket_test - 2019.02.01 at 16h 25m 08s.xml">
-      <configuration name="TestWorker in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestGateway_in_gsocket_test - 2019.02.01 at 16h 25m 10s.xml">
-      <configuration name="TestGateway in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestRegister_in_gsocket_test - 2019.02.01 at 16h 25m 12s.xml">
-      <configuration name="TestRegister in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestGateway_in_gsocket_test - 2019.02.01 at 16h 29m 22s.xml">
-      <configuration name="TestGateway in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestRegister_in_gsocket_test - 2019.02.01 at 16h 32m 20s.xml">
-      <configuration name="TestRegister in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestGateway_in_gsocket_test - 2019.02.01 at 16h 32m 20s.xml">
-      <configuration name="TestGateway in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestWorker_in_gsocket_test - 2019.02.01 at 16h 32m 20s.xml">
-      <configuration name="TestWorker in gsocket/test" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestGateway_in_gsocket_test - 2019.02.01 at 17h 03m 03s.xml">
       <configuration name="TestGateway in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGateway_in_gsocket_test - 2019.02.01 at 18h 45m 48s.xml">
+      <configuration name="TestGateway in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestRegister_in_gsocket_test - 2019.02.01 at 18h 45m 48s.xml">
+      <configuration name="TestRegister in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestWorker_in_gsocket_test - 2019.02.01 at 18h 45m 48s.xml">
+      <configuration name="TestWorker in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestRegister_in_gsocket_test - 2019.02.01 at 18h 52m 06s.xml">
+      <configuration name="TestRegister in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGateway_in_gsocket_test - 2019.02.01 at 18h 52m 06s.xml">
+      <configuration name="TestGateway in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestWorker_in_gsocket_test - 2019.02.01 at 18h 52m 06s.xml">
+      <configuration name="TestWorker in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestRegister_in_gsocket_test - 2019.02.01 at 18h 53m 52s.xml">
+      <configuration name="TestRegister in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestGateway_in_gsocket_test - 2019.02.01 at 18h 53m 52s.xml">
+      <configuration name="TestGateway in gsocket/test" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestWorker_in_gsocket_test - 2019.02.01 at 18h 53m 52s.xml">
+      <configuration name="TestWorker in gsocket/test" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -306,10 +337,10 @@
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.61238533" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.61238533" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32912844" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32912844" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39908257" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -328,7 +359,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="23" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -545,6 +576,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../github.com/gorilla/websocket/conn.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="740" column="64" selection-start-line="740" selection-start-column="64" selection-end-line="740" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="257" column="12" selection-start-line="257" selection-start-column="12" selection-end-line="257" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -555,45 +600,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../github.com/gorilla/websocket/conn.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="740" column="64" selection-start-line="740" selection-start-column="64" selection-end-line="740" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/const.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/message.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+        <state relative-caret-position="420">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding>
             <element signature="e#17#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="271" column="56" lean-forward="true" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/worker.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3750">
-          <caret line="402" column="44" lean-forward="true" selection-start-line="402" selection-start-column="44" selection-end-line="402" selection-end-column="44" />
+        <state relative-caret-position="226">
+          <caret line="280" column="54" lean-forward="true" selection-start-line="280" selection-start-column="54" selection-end-line="280" selection-end-column="54" />
           <folding>
             <element signature="n#!!block;n#WorkerRun#0" />
             <element signature="n#!!block;n#workerHandler#0" />
             <element signature="n#!!block;n#TestBus#0" />
+            <element signature="n#!!block;n#dialGateway#0" />
+            <element signature="n#!!block;n#offlineConn#0" />
           </folding>
         </state>
       </provider>
@@ -602,13 +635,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!block;n#server#0" />
+            <element signature="e#3195#3247#0" />
+            <element signature="e#3308#3365#0" />
+            <element signature="e#3395#3763#0" />
+            <element signature="e#3480#3626#0" />
+            <element signature="e#3544#3612#0" />
+            <element signature="e#3696#3760#0" />
+            <element signature="n#!!block;n#dialRegister#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/socket_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="210">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
             <element signature="e#14#46#0" expanded="true" />
           </folding>
