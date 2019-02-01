@@ -24,26 +24,9 @@
         <entry file="file://$PROJECT_DIR$/test/socket_test.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding>
                 <element signature="e#14#46#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="worker.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/worker.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
-              <folding>
-                <element signature="n#!!block;n#workerHandler#0" />
-                <element signature="n#!!block;n#TestBus#0" />
-                <element signature="n#!!block;n#dialGateway#0" />
-                <element signature="n#!!block;n#dialRegister#0" />
-                <element signature="n#!!block;n#offlineConn#0" />
-                <element signature="n#!!block;n#watchConnToRegister#0" />
               </folding>
             </state>
           </provider>
@@ -52,14 +35,8 @@
       <file leaf-file-name="gateway.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gateway.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-              <folding>
-                <element signature="e#17#181#0" expanded="true" />
-                <element signature="n#!!block;n#server#0" />
-                <element signature="n#!!block;n#consumerMsg#0" />
-                <element signature="n#!!block;n#offlineConn#0" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -206,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestWorker in gsocket/test">
+  <component name="RunManager" selected="Go Test.TestGateway in gsocket/test">
     <configuration name="TestGateway in gsocket/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="gsocket" />
       <working_directory value="$PROJECT_DIR$/test" />
@@ -271,8 +248,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestWorker in gsocket/test" />
         <item itemvalue="Go Test.TestGateway in gsocket/test" />
+        <item itemvalue="Go Test.TestWorker in gsocket/test" />
         <item itemvalue="Go Test.TestRegister in gsocket/test" />
         <item itemvalue="Go Test.TestServer in gsocket/test" />
         <item itemvalue="Go Test.TestSyncMap in gsocket/test" />
@@ -322,7 +299,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="23" width="1918" height="992" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15138593" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32912844" />
@@ -330,10 +306,10 @@
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44151375" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.61238533" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32912844" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32912844" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39908257" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -605,48 +581,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/register.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="179" column="40" selection-start-line="179" selection-start-column="40" selection-end-line="179" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!block;n#server#0" />
-            <element signature="n#!!block;n#consumerMsg#0" />
-            <element signature="n#!!block;n#offlineConn#0" />
-          </folding>
+        <state relative-caret-position="207">
+          <caret line="271" column="56" lean-forward="true" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/worker.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="93" column="49" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+        <state relative-caret-position="3750">
+          <caret line="402" column="44" lean-forward="true" selection-start-line="402" selection-start-column="44" selection-end-line="402" selection-end-column="44" />
           <folding>
+            <element signature="n#!!block;n#WorkerRun#0" />
             <element signature="n#!!block;n#workerHandler#0" />
             <element signature="n#!!block;n#TestBus#0" />
-            <element signature="n#!!block;n#dialGateway#0" />
-            <element signature="n#!!block;n#dialRegister#0" />
-            <element signature="n#!!block;n#offlineConn#0" />
-            <element signature="n#!!block;n#watchConnToRegister#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gateway.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-          <folding>
-            <element signature="e#17#181#0" expanded="true" />
-            <element signature="n#!!block;n#server#0" />
-            <element signature="n#!!block;n#consumerMsg#0" />
-            <element signature="n#!!block;n#offlineConn#0" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/socket_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding>
             <element signature="e#14#46#0" expanded="true" />
           </folding>
