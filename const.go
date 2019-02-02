@@ -1,9 +1,10 @@
 package gsocket
 
 const (
-	WORKER_MSG                      = "worker_msg"                      //服务端消息
-	CLIENT_MSG                      = "client_msg"                      //客户端消息
-	GATEWAY_MSG                     = "gateway_msg"                     //网关转发消息
+	CLIENT_MSG_TO_GATEWAY           = "client_msg_to_gateway"           //客户端发送消息给网关
+	GATEWAY_MSG_TO_CLIENT           = "gateway_msg_to_client"           //网关发送消息给客户端
+	GATEWAY_MSG_TO_WORKER           = "gateway_msg_to_worker"           //网关发送消息给服务端
+	WORKER_MSG_TO_GATEWAY           = "worker_msg_to_gateway"           //处理器发送消息给网关
 	CONN_CLOSE                      = "conn_close"                      //连接断开
 	HEART_BEAT                      = "heart_beat"                      //心跳标识
 	CLIENT_CONN_TO_GATEWAY          = "client_conn_to_gateway"          //客户端到网关标识

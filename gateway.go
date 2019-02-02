@@ -95,7 +95,36 @@ func GatewayRun() {
 		}
 	}() //监测内存中的连接数
 
+	go func() {
+		ticker := time.NewTicker(time.Second * 20)
+		defer ticker.Stop()
+		for {
+			select {
+			case <-ticker.C:
+				g.sendMsgToWorker()
+			}
+		}
+	}()
+
 	<-g.stopChan
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ * 发送消息给处理器
+ * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+func (gateway *gateway) sendMsgToWorker() {
+	gateway.msgChan <- &ChanMsg{
+		msg: &Message{
+			Type: CLIENT_MSG_TO_GATEWAY,
+			Payload: &MessagePayload{
+				UserId:   "QQQQQQQQQQQ",
+				TargetId: "DDDDDDDDDDD",
+				Msg:      "XXXXXXXXXXX",
+				Extend:   "WWWWWWWWWWW",
+			},
+			Timestamp: time.Now().Unix(),
+		},
+	}
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -274,9 +303,41 @@ func (gateway *gateway) consumerMsg() {
 			switch result.msg.Type {
 			case CONN_CLOSE:
 				go gateway.offlineConn(result)
-			case WORKER_MSG:
-				msgJson, err := json.Marshal(result.msg)
-				fmt.Println("MSG:", string(msgJson), err)
+			case WORKER_MSG_TO_GATEWAY:
+				{
+					msgJson, err := json.Marshal(result.msg)
+					fmt.Println("MSG:", string(msgJson), err)
+				}
+			case CLIENT_MSG_TO_GATEWAY:
+				{
+					message := result.msg
+					message.Type = GATEWAY_MSG_TO_WORKER //修改type
+					msgJson, err := json.Marshal(message)
+					if err == nil {
+						//通知任意一个处理器
+						gateway.workerConns.Range(func(key, value interface{}) bool {
+							if v, ok := value.(ConnFlag); ok {
+								err = v.Conn.WriteMessage(websocket.TextMessage, msgJson)
+								if err != nil {
+									//移除连接
+									jsonResult := &Message{}
+									if err != nil {
+										jsonResult.Type = CONN_CLOSE
+										gateway.msgChan <- &ChanMsg{
+											msg:    jsonResult,
+											conn:   v.Conn,
+											connId: v.ConnId,
+										}
+									}
+								} else {
+									//投递给一个处理器就ok
+									return false
+								}
+							}
+							return true
+						})
+					}
+				}
 			case WORKER_CONN_TO_GATEWAY:
 				{
 					//connid
@@ -306,28 +367,30 @@ func (gateway *gateway) consumerMsg() {
 				}
 			case CLIENT_CONN_TO_GATEWAY:
 				{
-					////connid
-					//connId := result.connId
-					////remoteAddr
-					//remoteAddr := result.conn.RemoteAddr().String()
-					////conn
-					//conn := result.conn
-					//terninalName:=result.msg.Type
-					//
-					////处理映射
-					//if _, ok := gateway.connMapping.Load(connId); !ok {
-					//	gateway.connMapping.Store(connId, ConnMap{
-					//		MapKey: remoteAddr,
-					//		Tag:    CLIENT_CONN_TO_GATEWAY,
-					//	})
-					//}
-					////客户端连接到网关
-					//if _, ok := gateway.clientConns.Load(remoteAddr); !ok {
-					//	gateway.clientConns.Store(remoteAddr, ConnFlag{
-					//		ConnId:connId,
-					//		TerminalName:TERMINAL_NAME_SERVER
-					//	})
-					//}
+					//connid
+					connId := result.connId
+					//remoteAddr
+					remoteAddr := result.conn.RemoteAddr().String()
+					//conn
+					conn := result.conn
+					//终端名称
+					terninalName := result.msg.Type
+
+					//处理映射
+					if _, ok := gateway.connMapping.Load(connId); !ok {
+						gateway.connMapping.Store(connId, ConnMap{
+							MapKey: remoteAddr,
+							Tag:    CLIENT_CONN_TO_GATEWAY,
+						})
+					}
+					//客户端连接到网关
+					if _, ok := gateway.clientConns.Load(remoteAddr); !ok {
+						gateway.clientConns.Store(remoteAddr, ConnFlag{
+							ConnId:       connId,
+							TerminalName: terninalName,
+							Conn:         conn,
+						})
+					}
 				}
 			case HEART_BEAT:
 				{

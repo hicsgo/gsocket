@@ -193,8 +193,6 @@ func (register *register) consumerMsg() {
 			case CONN_CLOSE:
 				//移除连接以及连接映射
 				go register.offlineConn(result)
-			case WORKER_MSG:
-				fmt.Println("register_gateway_offline")
 			case WORKER_CONN_TO_REGISTER:
 				{
 					//connId

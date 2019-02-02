@@ -107,7 +107,7 @@ func (worker *worker) workerHandler() {
 			switch result.msg.Type {
 			case CONN_CLOSE:
 				go worker.offlineConn(result)
-			case WORKER_MSG:
+			case WORKER_MSG_TO_GATEWAY:
 				message := result.msg
 				msgJson, err := json.Marshal(message)
 				if err == nil {
@@ -130,6 +130,10 @@ func (worker *worker) workerHandler() {
 						}
 						return true
 					})
+				}
+			case GATEWAY_MSG_TO_WORKER:
+				{
+					log.Println("worker recv client msg from gateway ")
 				}
 			case REGISTER_BROADCAST_GATEWAY_ADDR:
 				{
@@ -167,7 +171,7 @@ func (worker *worker) TestBus() {
 
 	worker.msgChan <- &ChanMsg{
 		msg: &Message{
-			Type: WORKER_MSG,
+			Type: WORKER_MSG_TO_GATEWAY,
 			Payload: &MessagePayload{
 				UserId:   "1",
 				TargetId: "2",
