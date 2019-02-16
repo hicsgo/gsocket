@@ -5,13 +5,14 @@ import (
 )
 
 import (
-	"net/http"
-	"log"
-	"sync"
-	"github.com/satori/go.uuid"
 	"encoding/json"
 	"fmt"
+	"log"
+	"net/http"
+	"sync"
 	"time"
+
+	uuid "github.com/satori/go.uuid"
 )
 
 /* ================================================================================
@@ -33,6 +34,7 @@ type register struct {
  * 启动注册中心
  * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 func RegisterRun() {
+
 	//实例化注册中心
 	r := &register{
 		gatewaysToRegisterConns: sync.Map{},
