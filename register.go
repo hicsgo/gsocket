@@ -34,7 +34,6 @@ type register struct {
  * 启动注册中心
  * ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 func RegisterRun() {
-
 	//实例化注册中心
 	r := &register{
 		gatewaysToRegisterConns: sync.Map{},
